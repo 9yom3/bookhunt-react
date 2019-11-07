@@ -1,36 +1,29 @@
-/**
- * @flow
- * @relayHash 946a351eca639c89fe49cd436ab563b7
- */
+/* tslint:disable */
 
-/* eslint-disable */
+import { ConcreteRequest } from "relay-runtime";
+export type LoginMutationVariables = {
+    email: string;
+    password: string;
+};
+export type LoginMutationResponse = {
+    readonly login: {
+        readonly token: {
+            readonly accessToken: string;
+            readonly refreshToken: string;
+            readonly tokenType: string;
+            readonly expiresIn: number;
+        };
+        readonly user: {
+            readonly id: string;
+            readonly username: string;
+        };
+    };
+};
+export type LoginMutation = {
+    readonly response: LoginMutationResponse;
+    readonly variables: LoginMutationVariables;
+};
 
-'use strict';
-
-/*::
-import type { ConcreteRequest } from 'relay-runtime';
-export type LoginMutationVariables = {|
-  email: string,
-  password: string,
-|};
-export type LoginMutationResponse = {|
-  +login: {|
-    +token: {|
-      +accessToken: string,
-      +refreshToken: string,
-      +tokenType: string,
-      +expiresIn: number,
-    |},
-    +user: {|
-      +id: string
-    |},
-  |}
-|};
-export type LoginMutation = {|
-  variables: LoginMutationVariables,
-  response: LoginMutationResponse,
-|};
-*/
 
 
 /*
@@ -47,12 +40,13 @@ mutation LoginMutation(
     }
     user {
       id
+      username
     }
   }
 }
 */
 
-const node/*: ConcreteRequest*/ = (function(){
+const node: ConcreteRequest = (function(){
 var v0 = [
   {
     "kind": "LocalArgument",
@@ -142,6 +136,13 @@ v1 = [
             "name": "id",
             "args": null,
             "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "username",
+            "args": null,
+            "storageKey": null
           }
         ]
       }
@@ -168,11 +169,10 @@ return {
     "operationKind": "mutation",
     "name": "LoginMutation",
     "id": null,
-    "text": "mutation LoginMutation(\n  $email: String!\n  $password: String!\n) {\n  login(email: $email, password: $password) {\n    token {\n      accessToken\n      refreshToken\n      tokenType\n      expiresIn\n    }\n    user {\n      id\n    }\n  }\n}\n",
+    "text": "mutation LoginMutation(\n  $email: String!\n  $password: String!\n) {\n  login(email: $email, password: $password) {\n    token {\n      accessToken\n      refreshToken\n      tokenType\n      expiresIn\n    }\n    user {\n      id\n      username\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
-// prettier-ignore
-(node/*: any*/).hash = '762f203347ef82f13505680d3e963653';
-module.exports = node;
+(node as any).hash = '7314f46b940971a2954befb8365c16b8';
+export default node;

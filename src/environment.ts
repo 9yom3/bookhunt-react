@@ -9,7 +9,7 @@ async function fetchQuery(
     operation: { text: any; },
     variables: any,
 ) {
-    const response = await fetch('https://api.book-hunt.com/', {
+    const response = await fetch('https://api.book-hunt.com/api/v1/graphql', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -17,11 +17,11 @@
     "typescript": "3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "relay": "relay-compiler --src ./src --schema ./data/schema.json --extensions ts tsx"
+    "relay": "relay-compiler --src ./src --schema ./data/schema.json --language typescript --extensions ts tsx"
   },
   "eslintConfig": {
     "extends": "react-app"
