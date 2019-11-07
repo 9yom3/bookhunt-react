@@ -13,7 +13,7 @@ type Props = {
 const App: React.FC<RouteComponentProps<Props>> = (props: RouteComponentProps<Props>) => {
 
   return (
-    <div>
+    <div className="container">
       Hello World !
     </div>
 
