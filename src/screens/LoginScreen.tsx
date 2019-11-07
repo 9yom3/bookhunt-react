@@ -32,12 +32,12 @@ const LoginScreen: React.FC<Props> = (props: Props) => {
             <div className="error">{error}</div>
             <div>
                 <input type="email" value={email} placeholder="Email" onChange={e => setEmail(e.target.value)} />
-
             </div>
+
             <div>
                 <input type="password" value={password} placeholder="Password" onChange={e => setPassword(e.target.value)} />
-
             </div>
+
             <div>
                 <input type="submit" value="Login" />
             </div>

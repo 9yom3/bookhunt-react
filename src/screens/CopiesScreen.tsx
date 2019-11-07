@@ -6,6 +6,7 @@ import Hello from '../component/Hello';
 import { QueryRenderer } from 'react-relay';
 import { copyScreenQuery } from '../graphql/CopiesScreenQuery';
 import CopyRow from '../component/CopyRow';
+import AddCopy from '../component/AddCopy';
 
 type Props = {
     user: LoginMutationResponse
@@ -13,6 +14,9 @@ type Props = {
 
 const CopiesScreen: React.FC<Props> = (prop: Props) => {
     const { username } = prop.user.login.user
+
+    const onSubmit = (isbn: string) => {
+    }
 
     return (
         <QueryRenderer<CopiesScreenQuery>
@@ -25,6 +29,7 @@ const CopiesScreen: React.FC<Props> = (prop: Props) => {
                     return (
                         <>
                             <Hello username={username} />
+                            <AddCopy onSubmit={onSubmit} userId={prop.user.login.user.id} />
                             {props.copiesByUserId.map((copy, key) => {
                                 return <CopyRow key={key} copy={copy as any} />
                             })}
