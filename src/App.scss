@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html, body, #root {
+  height: 100%;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=email], input[type=password], input[type=submit] {
+  width: 300px;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+input[type=submit] {
+  background-color: #00ab9f;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+
+.copy-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hello {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px;
+}
